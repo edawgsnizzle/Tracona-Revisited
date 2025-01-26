@@ -12435,8 +12435,8 @@
 	<PROFILE>
 		<uiIndex>113</uiIndex>
 		<Type>4</Type>
-		<zName>Jake Cameron</zName>
-		<zNickname>Jake</zNickname>
+		<zName>Dale Armstrong</zName>
+		<zNickname>Dale</zNickname>
 		<ubFaceIndex>113</ubFaceIndex>
 		<usVoiceIndex>113</usVoiceIndex>
 		<usEyesX>22</usEyesX>
@@ -12448,25 +12448,25 @@
 		<uiBlinkFrequency>3000</uiBlinkFrequency>
 		<uiExpressionFrequency>2000</uiExpressionFrequency>
 		<PANTS>GREENPANTS</PANTS>
-		<VEST>BROWNVEST</VEST>
-		<SKIN>PINKSKIN</SKIN>
-		<HAIR>WHITEHEAD</HAIR>
+		<VEST>BLUEVEST</VEST>
+		<SKIN>TANSKIN</SKIN>
+		<HAIR>BROWNHEAD</HAIR>
 		<bSex>0</bSex>
-		<ubBodyType>12</ubBodyType>
-		<uiBodyTypeSubFlags>0</uiBodyTypeSubFlags>
+		<ubBodyType>1</ubBodyType>
+		<uiBodyTypeSubFlags>1</uiBodyTypeSubFlags>
 		<bAttitude>0</bAttitude>
 		<bCharacterTrait>0</bCharacterTrait>
 		<bDisability>0</bDisability>
 		<ubNeedForSleep>7</ubNeedForSleep>
 		<bReputationTolerance>101</bReputationTolerance>
 		<bDeathRate>0</bDeathRate>
-		<bLifeMax>67</bLifeMax>
-		<bLife>67</bLife>
-		<bStrength>69</bStrength>
-		<bAgility>41</bAgility>
+		<bLifeMax>87</bLifeMax>
+		<bLife>87</bLife>
+		<bStrength>89</bStrength>
+		<bAgility>71</bAgility>
 		<bDexterity>73</bDexterity>
-		<bWisdom>47</bWisdom>
-		<bMarksmanship>69</bMarksmanship>
+		<bWisdom>57</bWisdom>
+		<bMarksmanship>79</bMarksmanship>
 		<bExplosive>34</bExplosive>
 		<bLeadership>2</bLeadership>
 		<bMedical>2</bMedical>
@@ -12506,8 +12506,8 @@
 		<bRefinementCareLevel>1</bRefinementCareLevel>
 		<bHatedNationality>21</bHatedNationality>
 		<bHatedNationalityCareLevel>1</bHatedNationalityCareLevel>
-		<bRacist>0</bRacist>
-		<bSexist>0</bSexist>
+		<bRacist>1</bRacist>
+		<bSexist>1</bSexist>
 		<sSalary>0</sSalary>
 		<uiWeeklySalary>0</uiWeeklySalary>
 		<uiBiWeeklySalary>0</uiBiWeeklySalary>
@@ -12521,11 +12521,11 @@
 		<usApproachFactorDirect>100</usApproachFactorDirect>
 		<usApproachFactorThreaten>100</usApproachFactorThreaten>
 		<usApproachFactorRecruit>100</usApproachFactorRecruit>
-		<sSectorX>6</sSectorX>
-		<sSectorY>9</sSectorY>
+		<sSectorX>14</sSectorX>
+		<sSectorY>6</sSectorY>
 		<sSectorZ>0</sSectorZ>
 		<ubCivilianGroup>12</ubCivilianGroup>
-		<bTown>8</bTown>
+		<bTown>3</bTown>
 		<bTownAttachment>38</bTownAttachment>
 		<usBackground>113</usBackground>
 		<GrowthModifierLife>0</GrowthModifierLife>
