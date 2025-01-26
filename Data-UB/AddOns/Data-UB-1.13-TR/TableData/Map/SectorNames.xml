@@ -934,27 +934,23 @@
   </SECTOR>
    <SECTOR>
     <SectorGrid>E8</SectorGrid>
-    <szUnexploredName>Farmland</szUnexploredName>
-    <szDetailedUnexploredName>Farmland</szDetailedUnexploredName>
-    <szExploredName>Farmland</szExploredName>
-    <szDetailedExploredName>Farmland</szDetailedExploredName>
+    <szUnexploredName>Woods</szUnexploredName>
+    <szDetailedUnexploredName>Woods</szDetailedUnexploredName>
+    <szExploredName>Woods</szExploredName>
+    <szDetailedExploredName>Woods</szDetailedExploredName>
     <sWaterType>0</sWaterType>
     <usNaturalDirt>160</usNaturalDirt>
-    <usCivilianPopulation>10</usCivilianPopulation>
-	<wealth>1</wealth>
  	<rainchance>40</rainchance>
 	<sandstormchance>0</sandstormchance>
   </SECTOR>
    <SECTOR>
     <SectorGrid>E9</SectorGrid>
-    <szUnexploredName>Farm, road</szUnexploredName>
-    <szDetailedUnexploredName>Farm, road</szDetailedUnexploredName>
-    <szExploredName>Farm, road</szExploredName>
-    <szDetailedExploredName>Farm, road</szDetailedExploredName>
+    <szUnexploredName>Woods</szUnexploredName>
+    <szDetailedUnexploredName>Woods</szDetailedUnexploredName>
+    <szExploredName>Woods</szExploredName>
+    <szDetailedExploredName>Woods</szDetailedExploredName>
     <sWaterType>1</sWaterType>
     <usNaturalDirt>150</usNaturalDirt>
-    <usCivilianPopulation>10</usCivilianPopulation>
-	<wealth>1</wealth>
  	<rainchance>50</rainchance>
 	<sandstormchance>0</sandstormchance>
   </SECTOR>
@@ -1121,35 +1117,31 @@
   </SECTOR>
    <SECTOR>
     <SectorGrid>F8</SectorGrid>
-    <szUnexploredName>Cambria, Hospital</szUnexploredName>
-    <szDetailedUnexploredName>Cambria, Hospital</szDetailedUnexploredName>
-    <szExploredName>Cambria, Hospital</szExploredName>
-    <szDetailedExploredName>Cambria, Hospital</szDetailedExploredName>
+    <szUnexploredName>Woods</szUnexploredName>
+    <szDetailedUnexploredName>Woods</szDetailedUnexploredName>
+    <szExploredName>Woods</szExploredName>
+    <szDetailedExploredName>Woods</szDetailedExploredName>
     <sWaterType>1</sWaterType>
     <usNaturalDirt>100</usNaturalDirt>
-    <usCivilianPopulation>200</usCivilianPopulation>
-	<wealth>7</wealth>
  	<rainchance>45</rainchance>
 	<sandstormchance>0</sandstormchance>
-	<bloodcatraidpossible>1</bloodcatraidpossible>
-	<zombieraidpossible>1</zombieraidpossible>
-	<banditraidpossible>1</banditraidpossible>
+	<bloodcatraidpossible>0</bloodcatraidpossible>
+	<zombieraidpossible>0</zombieraidpossible>
+	<banditraidpossible>0</banditraidpossible>
   </SECTOR>
    <SECTOR>
     <SectorGrid>F9</SectorGrid>
-    <szUnexploredName>Cambria</szUnexploredName>
-    <szDetailedUnexploredName>Cambria</szDetailedUnexploredName>
-    <szExploredName>Cambria</szExploredName>
-    <szDetailedExploredName>Cambria</szDetailedExploredName>
-    <sWaterType>1</sWaterType>
+    <szUnexploredName>Woods</szUnexploredName>
+    <szDetailedUnexploredName>Woods</szDetailedUnexploredName>
+    <szExploredName>Woods</szExploredName>
+    <szDetailedExploredName>Woods</szDetailedExploredName>
+    <sWaterType>0</sWaterType>
     <usNaturalDirt>100</usNaturalDirt>
-    <usCivilianPopulation>100</usCivilianPopulation>
-	<wealth>2</wealth>
  	<rainchance>40</rainchance>
 	<sandstormchance>0</sandstormchance>
 	<bloodcatraidpossible>0</bloodcatraidpossible>
-	<zombieraidpossible>1</zombieraidpossible>
-	<banditraidpossible>1</banditraidpossible>
+	<zombieraidpossible>0</zombieraidpossible>
+	<banditraidpossible>0</banditraidpossible>
   </SECTOR>
    <SECTOR>
     <SectorGrid>F10</SectorGrid>

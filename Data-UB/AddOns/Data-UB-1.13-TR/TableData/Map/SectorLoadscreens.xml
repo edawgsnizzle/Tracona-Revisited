@@ -732,8 +732,8 @@
 		<szLocation>E8</szLocation>
 		<RandomAltSector>0</RandomAltSector>
 		<szImageFormat>STI</szImageFormat>
-		<szDay>Loadscreens\LS_DayWild</szDay>
-		<szNight>Loadscreens\LS_NightWild</szNight>
+		<szDay>Loadscreens\LS_DayForest</szDay>
+		<szNight>Loadscreens\LS_NightForest</szNight>
 		<szDayAlt></szDayAlt>
 		<szNightAlt></szNightAlt>	
 	</SECTOR>
@@ -742,8 +742,8 @@
 		<szLocation>E9</szLocation>
 		<RandomAltSector>0</RandomAltSector>
 		<szImageFormat>STI</szImageFormat>
-		<szDay>Loadscreens\LS_DayWild</szDay>
-		<szNight>Loadscreens\LS_NightWild</szNight>
+		<szDay>Loadscreens\LS_DayForest</szDay>
+		<szNight>Loadscreens\LS_NightForest</szNight>
 		<szDayAlt></szDayAlt>
 		<szNightAlt></szNightAlt>	
 	</SECTOR>
@@ -894,8 +894,8 @@
 		<szLocation>F8</szLocation>
 		<RandomAltSector>0</RandomAltSector>
 		<szImageFormat>STI</szImageFormat>
-		<szDay></szDay>
-		<szNight></szNight>
+		<szDay>Loadscreens\LS_DayForest</szDay>
+		<szNight>Loadscreens\LS_NightForest</szNight>
 		<szDayAlt></szDayAlt>
 		<szNightAlt></szNightAlt>	
 	</SECTOR>
@@ -904,8 +904,8 @@
 		<szLocation>F9</szLocation>
 		<RandomAltSector>0</RandomAltSector>
 		<szImageFormat>STI</szImageFormat>
-		<szDay></szDay>
-		<szNight></szNight>
+		<szDay>Loadscreens\LS_DayForest</szDay>
+		<szNight>Loadscreens\LS_NightForest</szNight>
 		<szDayAlt></szDayAlt>
 		<szNightAlt></szNightAlt>	
 	</SECTOR>
