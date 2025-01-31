@@ -10923,27 +10923,27 @@
 	<PROFILE>
 		<uiIndex>99</uiIndex>
 		<Type>4</Type>
-		<zName>Salvatore Lappus</zName>
-		<zNickname>Sal</zNickname>
+		<zName>Fiona McCarthy</zName>
+		<zNickname>Fiona</zNickname>
 		<ubFaceIndex>99</ubFaceIndex>
 		<usVoiceIndex>99</usVoiceIndex>
-		<usEyesX>26</usEyesX>
-		<usEyesY>28</usEyesY>
+		<usEyesX>22</usEyesX>
+		<usEyesY>33</usEyesY>
 		<usMouthX>22</usMouthX>
-		<usMouthY>53</usMouthY>
+		<usMouthY>55</usMouthY>
 		<uiEyeDelay>0</uiEyeDelay>
 		<uiMouthDelay>0</uiMouthDelay>
 		<uiBlinkFrequency>3000</uiBlinkFrequency>
 		<uiExpressionFrequency>2000</uiExpressionFrequency>
 		<PANTS>BLACKPANTS</PANTS>
-		<VEST>BLUEVEST</VEST>
-		<SKIN>DARKSKIN</SKIN>
-		<HAIR>BLACKHEAD</HAIR>
-		<bSex>0</bSex>
-		<ubBodyType>12</ubBodyType>
+		<VEST>BLACKSHIRT</VEST>
+		<SKIN>PINKSKIN</SKIN>
+		<HAIR>REDHEAD</HAIR>
+		<bSex>1</bSex>
+		<ubBodyType>3</ubBodyType>
 		<uiBodyTypeSubFlags>0</uiBodyTypeSubFlags>
-		<bAttitude>7</bAttitude>
-		<bCharacterTrait>12</bCharacterTrait>
+		<bAttitude>1</bAttitude>
+		<bCharacterTrait>4</bCharacterTrait>
 		<bDisability>0</bDisability>
 		<ubNeedForSleep>7</ubNeedForSleep>
 		<bReputationTolerance>101</bReputationTolerance>
@@ -17057,11 +17057,11 @@
 		<usApproachFactorDirect>100</usApproachFactorDirect>
 		<usApproachFactorThreaten>100</usApproachFactorThreaten>
 		<usApproachFactorRecruit>100</usApproachFactorRecruit>
-		<sSectorX>2</sSectorX>
-		<sSectorY>8</sSectorY>
+		<sSectorX>11</sSectorX>
+		<sSectorY>9</sSectorY>
 		<sSectorZ>0</sSectorZ>
 		<ubCivilianGroup>0</ubCivilianGroup>
-		<bTown>4</bTown>
+		<bTown>1</bTown>
 		<bTownAttachment>0</bTownAttachment>
 		<usBackground>155</usBackground>
 		<GrowthModifierLife>0</GrowthModifierLife>
