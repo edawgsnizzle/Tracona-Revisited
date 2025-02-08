@@ -784,8 +784,8 @@
 		<szImageFormat>STI</szImageFormat>
 		<szDay>Loadscreens\LS_DayMilitary</szDay>
 		<szNight>Loadscreens\LS_NightMilitary</szNight>
-		<szDayAlt>Loadscreens\LS_MissleDay</szDayAlt>
-		<szNightAlt>Loadscreens\LS_MissleNight</szNightAlt>
+		<szDayAlt>Loadscreens\LS_DayMilitary</szDayAlt>
+		<szNightAlt>Loadscreens\LS_NightMilitary</szNightAlt>
     	<szImageFormatAlt>PNG</szImageFormatAlt>
 	</SECTOR>
 	<SECTOR>

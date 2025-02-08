@@ -987,18 +987,18 @@ Possible values for Here tag:
 		<Sector y="G" x="8">
 			<TravelRating>0</TravelRating>
 			<North>EDGEOFWORLD</North>
-			<East>PLAINS</East>
-			<South>PLAINS</South>
+			<East>SPARSE</East>
+			<South>SPARSE</South>
 			<West>EDGEOFWORLD</West>
-			<Here>PLAINS</Here>
+			<Here>SPARSE</Here>
 		</Sector>
 		<Sector y="G" x="9">
 			<TravelRating>0</TravelRating>
 			<North>EDGEOFWORLD</North>
 			<East>EDGEOFWORLD</East>
-			<South>PLAINS</South>
-			<West>PLAINS</West>
-			<Here>PLAINS</Here>
+			<South>SPARSE</South>
+			<West>SPARSE</West>
+			<Here>SPARSE</Here>
 		</Sector>
 		<Sector y="G" x="10">
 			<TravelRating>0</TravelRating>
@@ -1117,34 +1117,34 @@ Possible values for Here tag:
 		<Sector y="H" x="7">
 			<TravelRating>8</TravelRating>
 			<North>EDGEOFWORLD</North>
-			<East>PLAINS</East>
+			<East>ROAD</East>
 			<South>EDGEOFWORLD</South>
 			<West>EDGEOFWORLD</West>
-			<Here>PLAINS</Here>
+			<Here>SPARSE_ROAD</Here>
 		</Sector>
 		<Sector y="H" x="8">
 			<TravelRating>15</TravelRating>
-			<North>PLAINS</North>
-			<East>PLAINS</East>
+			<North>SPARSE</North>
+			<East>ROAD</East>
 			<South>EDGEOFWORLD</South>
-			<West>PLAINS</West>
-			<Here>TOWN</Here>
+			<West>ROAD</West>
+			<Here>SPARSE_ROAD</Here>
 		</Sector>
 		<Sector y="H" x="9">
 			<TravelRating>15</TravelRating>
-			<North>PLAINS</North>
-			<East>PLAINS</East>
-			<South>PLAINS</South>
-			<West>PLAINS</West>
-			<Here>PLAINS</Here>
+			<North>SPARSE</North>
+			<East>SPARSE</East>
+			<South>ROAD</South>
+			<West>ROAD</West>
+			<Here>SPARSE_ROAD</Here>
 		</Sector>
 		<Sector y="H" x="10">
 			<TravelRating>3</TravelRating>
 			<North>EDGEOFWORLD</North>
 			<East>EDGEOFWORLD</East>
-			<South>DENSE</South>
-			<West>DENSE</West>
-			<Here>SAND</Here>
+			<South>SPARSE</South>
+			<West>SPARSE</West>
+			<Here>SPARSE</Here>
 		</Sector>
 		<Sector y="H" x="11">
 			<TravelRating>7</TravelRating>
@@ -1272,18 +1272,18 @@ Possible values for Here tag:
 		</Sector>
 		<Sector y="I" x="9">
 			<TravelRating>5</TravelRating>
-			<North>PLAINS</North>
-			<East>PLAINS</East>
+			<North>ROAD</North>
+			<East>ROAD</East>
 			<South>EDGEOFWORLD</South>
 			<West>EDGEOFWORLD</West>
-			<Here>SAND</Here>
+			<Here>SPARSE_ROAD</Here>
 		</Sector>
 		<Sector y="I" x="10">
 			<TravelRating>5</TravelRating>
-			<North>SAND</North>
+			<North>SPARSE</North>
 			<East>TOWN</East>
 			<South>EDGEOFWORLD</South>
-			<West>SAND</West>
+			<West>ROAD</West>
 			<Here>TOWN</Here>
 		</Sector>
 		<Sector y="I" x="11">

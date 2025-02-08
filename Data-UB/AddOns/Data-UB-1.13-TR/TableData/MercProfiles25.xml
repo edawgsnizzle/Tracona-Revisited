@@ -10167,7 +10167,7 @@
 	<PROFILE>
 		<uiIndex>92</uiIndex>
 		<Type>4</Type>
-		<zName>Brock Johnston</zName>
+		<zName>Brock Johnson</zName>
 		<zNickname>Brock</zNickname>
 		<ubFaceIndex>92</ubFaceIndex>
 		<usVoiceIndex>92</usVoiceIndex>
@@ -10231,15 +10231,15 @@
 		<bLearnToHate>255</bLearnToHate>
 		<bLearnToHateTime>0</bLearnToHateTime>
 		<bRace>0</bRace>
-		<bNationality>19</bNationality>
+		<bNationality>0</bNationality>
 		<bAppearance>0</bAppearance>
 		<bAppearanceCareLevel>0</bAppearanceCareLevel>
 		<bRefinement>0</bRefinement>
 		<bRefinementCareLevel>0</bRefinementCareLevel>
 		<bHatedNationality>18</bHatedNationality>
 		<bHatedNationalityCareLevel>2</bHatedNationalityCareLevel>
-		<bRacist>1</bRacist>
-		<bSexist>0</bSexist>
+		<bRacist>0</bRacist>
+		<bSexist>1</bSexist>
 		<sSalary>0</sSalary>
 		<uiWeeklySalary>0</uiWeeklySalary>
 		<uiBiWeeklySalary>0</uiBiWeeklySalary>
@@ -10986,8 +10986,8 @@
 		<bHatedTime5>0</bHatedTime5>
 		<bLearnToHate>255</bLearnToHate>
 		<bLearnToHateTime>0</bLearnToHateTime>
-		<bRace>4</bRace>
-		<bNationality>18</bNationality>
+		<bRace>0</bRace>
+		<bNationality>14</bNationality>
 		<bAppearance>0</bAppearance>
 		<bAppearanceCareLevel>0</bAppearanceCareLevel>
 		<bRefinement>1</bRefinement>
@@ -12499,7 +12499,7 @@
 		<bLearnToHate>255</bLearnToHate>
 		<bLearnToHateTime>0</bLearnToHateTime>
 		<bRace>0</bRace>
-		<bNationality>18</bNationality>
+		<bNationality>0</bNationality>
 		<bAppearance>0</bAppearance>
 		<bAppearanceCareLevel>0</bAppearanceCareLevel>
 		<bRefinement>1</bRefinement>
@@ -14550,9 +14550,9 @@
 		<bHatedTime5>0</bHatedTime5>
 		<bLearnToHate>255</bLearnToHate>
 		<bLearnToHateTime>0</bLearnToHateTime>
-		<bRace>0</bRace>
-		<bNationality>4</bNationality>
-		<bAppearance>3</bAppearance>
+		<bRace>4</bRace>
+		<bNationality>18</bNationality>
+		<bAppearance>0</bAppearance>
 		<bAppearanceCareLevel>0</bAppearanceCareLevel>
 		<bRefinement>0</bRefinement>
 		<bRefinementCareLevel>0</bRefinementCareLevel>

@@ -576,6 +576,7 @@ AddProfileToMap (UB_GetRaulID(),11,9,0,46870) -- get id from UB_Options.ini
 AddProfileToMap (UB_GetMorrisID(),15,12,3,14752) -- get id from UB_Options.ini
 AddProfileToMap (UB_GetRudyID(),13,10,0,62240) -- get id from UB_Options.ini
 SetFactTrue( 220 ) -- Set Manny to bartender
+SetFactTrue( 224 ) -- Set Hummer
 
 -- Add test UB profiles
 --[[
