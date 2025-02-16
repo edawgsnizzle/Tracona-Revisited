@@ -964,6 +964,27 @@ if ( Test == false ) then
 
 		UB_SetNumberJa25EnemiesInSurfaceSector( 11,6, ubNumAdmins, ubNumTroops, ubNumElites )
 
+	-- E11
+		if ( newDIFFICULTY_LEVEL == DIF_LEVEL_EASY ) then
+				ubNumAdmins = 0
+				ubNumTroops = 4 + math.random( 1, 3 )
+				ubNumElites = 0 
+		elseif ( newDIFFICULTY_LEVEL == DIF_LEVEL_MEDIUM ) then
+				ubNumAdmins = 0 
+				ubNumTroops = 6 + math.random( 1, 2 )
+				ubNumElites = 1 + math.random( 1, 2 )
+		elseif ( newDIFFICULTY_LEVEL == DIF_LEVEL_HARD ) then	
+				ubNumAdmins = 0
+				ubNumTroops = 8 + math.random( 1, 4 )
+				ubNumElites = 2 + math.random( 1, 3 )
+		elseif ( newDIFFICULTY_LEVEL == DIF_LEVEL_INSANE ) then
+				ubNumAdmins = 0 
+				ubNumTroops = 15 + math.random( 1, 4 )
+				ubNumElites = 2 + math.random( 1, 3 )
+		end
+
+		UB_SetNumberJa25EnemiesInSurfaceSector( 11,5, ubNumAdmins, ubNumTroops, ubNumElites )
+
 	-- Sardena Town
 	-- E13
 		if ( newDIFFICULTY_LEVEL == DIF_LEVEL_EASY ) then
