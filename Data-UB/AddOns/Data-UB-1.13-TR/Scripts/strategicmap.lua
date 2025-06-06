@@ -277,6 +277,12 @@ function HandleQuestCodeOnSectorEntry( sNewSectorX, sNewSectorY, bNewSectorZ )
 		SetKeyProfile (UB_GetBettyID(),true)
 	end
 
+	if ( CheckFact( Facts.FACT_ALL_TERRORISTS_KILLED, 0 ) == true ) then
+		SetCharacterSectorX(Profil.CARMEN, 0)
+		SetCharacterSectorY(Profil.CARMEN, 0)
+		SetCharacterSectorZ(Profil.CARMEN, 0)
+	end
+
 end
 
 function HandleQuestCodeOnSectorExit( sOldSectorX, sOldSectorY, bOldSectorZ )

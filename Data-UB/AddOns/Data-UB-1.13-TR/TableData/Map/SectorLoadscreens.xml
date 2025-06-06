@@ -754,8 +754,8 @@
 		<szImageFormat>STI</szImageFormat>
 		<szDay>Loadscreens\LS_DayWild</szDay>
 		<szNight>Loadscreens\LS_NightWild</szNight>
-		<szDayAlt></szDayAlt>
-		<szNightAlt></szNightAlt>	
+		<szDayAlt>Loadscreens\LS_DayWild</szDayAlt>
+		<szNightAlt>Loadscreens\LS_NightWild</szNightAlt>	
 	</SECTOR>
 	<SECTOR>
 		<uiIndex>75</uiIndex>
@@ -896,8 +896,8 @@
 		<szImageFormat>STI</szImageFormat>
 		<szDay>Loadscreens\LS_DayForest</szDay>
 		<szNight>Loadscreens\LS_NightForest</szNight>
-		<szDayAlt></szDayAlt>
-		<szNightAlt></szNightAlt>	
+		<szDayAlt>Loadscreens\LS_DayForest</szDayAlt>
+		<szNightAlt>Loadscreens\LS_NightForest</szNightAlt>	
 	</SECTOR>
 	<SECTOR>
 		<uiIndex>89</uiIndex>
@@ -1248,8 +1248,8 @@
 		<szImageFormat>STI</szImageFormat>
 		<szDay>Loadscreens\LS_DayGeneric</szDay>
 		<szNight>Loadscreens\LS_NightGeneric</szNight>
-		<szDayAlt></szDayAlt>
-		<szNightAlt></szNightAlt>
+		<szDayAlt>Loadscreens\LS_DayGeneric</szDayAlt>
+		<szNightAlt>Loadscreens\LS_NightGeneric</szNightAlt>
 	</SECTOR>
 	<SECTOR>
 		<uiIndex>124</uiIndex>
@@ -1258,8 +1258,8 @@
 		<szImageFormat>STI</szImageFormat>
 		<szDay>Loadscreens\LS_DayWild</szDay>
 		<szNight>Loadscreens\LS_NightWild</szNight>
-		<szDayAlt></szDayAlt>
-		<szNightAlt></szNightAlt>	
+		<szDayAlt>Loadscreens\LS_DayWild</szDayAlt>
+		<szNightAlt>Loadscreens\LS_NightWild</szNightAlt>	
 	</SECTOR>
 	<SECTOR>
 		<uiIndex>125</uiIndex>

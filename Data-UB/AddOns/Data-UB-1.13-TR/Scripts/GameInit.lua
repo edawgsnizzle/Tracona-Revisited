@@ -368,6 +368,10 @@ Profil =
 	Tex = 64,
 	JerryMilo = 76,
 	Morris = 75,
+	Annie = 83,
+	Imposter = 83,
+	Tiffany = 110,
+	Jasmin = 111,
 	Arnie = 128,
 }
 
@@ -449,6 +453,33 @@ local ubNumTroops = 0
 local ubNumElites = 0
 local Test = false
 local JohnKulbaText = true
+
+	-- Add the imposter at a random location!
+	if is_networked == 0 then
+		o = math.random(1, 2)
+		if o == 1 then
+			-- F8 - Imposter
+			AddNPCtoSector( Profil.Imposter, 8, SectorY.MAP_ROW_F, 0 )
+			AddAltSectorNew( 8, SectorY.MAP_ROW_F )
+		elseif o == 2 then
+			-- E10 - Imposter
+			AddNPCtoSector( Profil.Imposter, 10, SectorY.MAP_ROW_E, 0 )
+			AddAltSectorNew( 10, SectorY.MAP_ROW_E )
+		end
+	end
+
+	if is_networked == 0 then
+		o = math.random(1, 2)
+		if o == 1 then
+			-- H11 - Tiffany
+			AddNPCtoSector( Profil.Tiffany, 11, SectorY.MAP_ROW_H, 0 )
+			AddAltSectorNew( 11, SectorY.MAP_ROW_H )
+		elseif o == 2 then
+			-- E13 - Trex
+			AddNPCtoSector( Profil.Jasmin, 13, SectorY.MAP_ROW_E, 0 )
+			AddAltSectorNew( 13, SectorY.MAP_ROW_E )
+		end
+	end
 	
 if ( UB_RandomManuelText == true )	then			
 
