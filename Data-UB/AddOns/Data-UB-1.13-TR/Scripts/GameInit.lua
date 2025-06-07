@@ -889,20 +889,20 @@ if ( Test == false ) then
 	-- J13
 		if ( newDIFFICULTY_LEVEL == DIF_LEVEL_EASY ) then
 				ubNumAdmins = 0 
-				ubNumTroops = 16 + math.random( 1, 6 )
+				ubNumTroops = 22 + math.random( 1, 6 )
 				ubNumElites = 3 
 		elseif ( newDIFFICULTY_LEVEL == DIF_LEVEL_MEDIUM ) then
 				ubNumAdmins = 0 
-				ubNumTroops = 18 + math.random( 1, 5 )
-				ubNumElites = 7 + math.random( 1, 2 )
+				ubNumTroops = 25 + math.random( 1, 5 )
+				ubNumElites = 15 + math.random( 1, 2 )
 		elseif ( newDIFFICULTY_LEVEL == DIF_LEVEL_HARD ) then	
 				ubNumAdmins = 0 
-				ubNumTroops = 17 + math.random( 1, 4 )
-				ubNumElites = 8 + math.random( 1, 3 )
+				ubNumTroops = 30 + math.random( 1, 4 )
+				ubNumElites = 18 + math.random( 1, 3 )
 		elseif ( newDIFFICULTY_LEVEL == DIF_LEVEL_INSANE ) then
 				ubNumAdmins = 0 
-				ubNumTroops = 22 + math.random( 1, 4 )
-				ubNumElites = 8 + math.random( 1, 3 )
+				ubNumTroops = 36 + math.random( 1, 4 )
+				ubNumElites = 21 + math.random( 1, 3 )
 		end
 
 		UB_SetNumberJa25EnemiesInSurfaceSector( 13,10, ubNumAdmins, ubNumTroops, ubNumElites )
@@ -999,20 +999,20 @@ if ( Test == false ) then
 	-- E13
 		if ( newDIFFICULTY_LEVEL == DIF_LEVEL_EASY ) then
 				ubNumAdmins = 0
-				ubNumTroops = 16 + math.random( 1, 6 )
+				ubNumTroops = 22 + math.random( 1, 6 )
 				ubNumElites = 4
 		elseif ( newDIFFICULTY_LEVEL == DIF_LEVEL_MEDIUM ) then
 				ubNumAdmins = 0
-				ubNumTroops = 18 + math.random( 1, 4 )
-				ubNumElites = 7 + math.random( 1, 3 )
+				ubNumTroops = 25 + math.random( 1, 4 )
+				ubNumElites = 15 + math.random( 1, 3 )
 		elseif ( newDIFFICULTY_LEVEL == DIF_LEVEL_HARD ) then	
 				ubNumAdmins = 0
-				ubNumTroops = 22 + math.random( 1, 4 )
-				ubNumElites = 10 + math.random( 1, 3 )
+				ubNumTroops = 27 + math.random( 1, 4 )
+				ubNumElites = 20 + math.random( 1, 3 )
 		elseif ( newDIFFICULTY_LEVEL == DIF_LEVEL_INSANE ) then
 				ubNumAdmins = 0
-				ubNumTroops = 8 + math.random( 1, 4 )
-				ubNumElites = 24 + math.random( 1, 3 )
+				ubNumTroops = 32 + math.random( 1, 4 )
+				ubNumElites = 25 + math.random( 1, 3 )
 		end
 
 		UB_SetNumberJa25EnemiesInSurfaceSector( 13,5, ubNumAdmins, ubNumTroops, ubNumElites )
