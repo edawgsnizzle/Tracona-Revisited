@@ -269,7 +269,7 @@ function HandleAtNewGridNo( ProfileId )
 	if ( WhatKindOfMercAmI (ProfileId) == What.MERC_TYPE__EPC ) then -- what EPC
 		
 		-- Skyrider
-		if ( ProfileId == Profil.SKYRIDER and CheckNPCSectorBool( Profil.SKYRIDER, 14, SectorY.MAP_ROW_E, 0 ) == true and PythSpacesAway( Profil.SKYRIDER,21627 ) < 11 ) then
+		if ( ProfileId == Profil.SKYRIDER and CheckNPCSectorBool( Profil.SKYRIDER, 14, SectorY.MAP_ROW_E, 0 ) == true and PythSpacesAway( Profil.SKYRIDER,31526 ) < 11 ) then
 				ActionStopMerc(Profil.SKYRIDER)
 				SetFactTrue( Facts.FACT_SKYRIDER_CLOSE_TO_CHOPPER )
 				TriggerNPCRecord( Profil.SKYRIDER, 15 )
