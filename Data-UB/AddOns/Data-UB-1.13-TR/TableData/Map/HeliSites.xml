@@ -33,19 +33,8 @@ Maximum 30 refuel sites can be used in game.
 			</refuelSector>
 			<refuelHidden>1</refuelHidden>
 			<refuelHeliTileIndex>399</refuelHeliTileIndex>
-			<refuelHeliGridNo>9001</refuelHeliGridNo>
-			<refuelSkyriderGridNo>8362</refuelSkyriderGridNo>
-		</REFUEL>
-		<REFUEL>
-			<refuelIndex>2</refuelIndex>
-			<refuelSector>
-				<x>14</x>
-				<y>5</y>
-			</refuelSector>
-			<refuelHidden>1</refuelHidden>
-			<refuelHeliTileIndex>435</refuelHeliTileIndex>
-			<refuelHeliGridNo>13067</refuelHeliGridNo>
-			<refuelSkyriderGridNo>12428</refuelSkyriderGridNo>
+			<refuelHeliGridNo>31528</refuelHeliGridNo>
+			<refuelSkyriderGridNo>32603</refuelSkyriderGridNo>
 		</REFUEL>
 	</REFUELLIST>		
 </HELI_INFO>

@@ -10707,24 +10707,24 @@
 	<PROFILE>
 		<uiIndex>97</uiIndex>
 		<Type>4</Type>
-		<zName>James "Skyrider" Bullock</zName>
-		<zNickname>Skyrider</zNickname>
+		<zName>Adrian "Tolly" Tollsworth</zName>
+		<zNickname>Tolly</zNickname>
 		<ubFaceIndex>97</ubFaceIndex>
 		<usVoiceIndex>97</usVoiceIndex>
-		<usEyesX>28</usEyesX>
-		<usEyesY>31</usEyesY>
-		<usMouthX>26</usMouthX>
-		<usMouthY>55</usMouthY>
+		<usEyesX>17</usEyesX>
+		<usEyesY>35</usEyesY>
+		<usMouthX>17</usMouthX>
+		<usMouthY>59</usMouthY>
 		<uiEyeDelay>0</uiEyeDelay>
 		<uiMouthDelay>0</uiMouthDelay>
 		<uiBlinkFrequency>3000</uiBlinkFrequency>
 		<uiExpressionFrequency>2000</uiExpressionFrequency>
-		<PANTS>BLUEPANTS</PANTS>
-		<VEST>greyVEST</VEST>
-		<SKIN>BLACKSKIN</SKIN>
-		<HAIR>BLACKHEAD</HAIR>
+		<PANTS>GREENPANTS</PANTS>
+		<VEST>BROWNVEST</VEST>
+		<SKIN>PINKSKIN</SKIN>
+		<HAIR>dirtblnde</HAIR>
 		<bSex>0</bSex>
-		<ubBodyType>12</ubBodyType>
+		<ubBodyType>0</ubBodyType>
 		<uiBodyTypeSubFlags>0</uiBodyTypeSubFlags>
 		<bAttitude>0</bAttitude>
 		<bCharacterTrait>1</bCharacterTrait>
@@ -10793,8 +10793,8 @@
 		<usApproachFactorDirect>100</usApproachFactorDirect>
 		<usApproachFactorThreaten>100</usApproachFactorThreaten>
 		<usApproachFactorRecruit>100</usApproachFactorRecruit>
-		<sSectorX>0</sSectorX>
-		<sSectorY>0</sSectorY>
+		<sSectorX>13</sSectorX>
+		<sSectorY>5</sSectorY>
 		<sSectorZ>0</sSectorZ>
 		<ubCivilianGroup>0</ubCivilianGroup>
 		<bTown>2</bTown>

@@ -538,16 +538,16 @@ ran = math.random(1, 2)
 					-- Randomly choose John's starting sector
 					if( math.random(1, 100 ) < 50 ) then
 						UB_JohnKulbaInitialSectorX (10)
-						AddProfileToMap (UB_GetJohnID(),10,9,0,46583) -- get id from UB_Options.ini
+						AddProfileToMap (UB_GetJohnID(),10,9,0,59603) -- get id from UB_Options.ini
 					else
 						UB_JohnKulbaInitialSectorX (11)
-						AddProfileToMap (UB_GetJohnID(),11,9,0,60954) -- get id from UB_Options.ini
+						AddProfileToMap (UB_GetJohnID(),11,9,0,75774) -- get id from UB_Options.ini
 					end
 
 			-- added video to Betty Shop
 			AddTexsVideosToBettysInventory()	
 			
-			AddProfileToMap (UB_GetTexID(),13,6,0,41131) -- get id from UB_Options.ini
+			AddProfileToMap (UB_GetTexID(),13,6,0,53471) -- get id from UB_Options.ini
 							
 
 		else
@@ -561,7 +561,7 @@ ran = math.random(1, 2)
 				
 			--Tex is available
 			
-			AddProfileToMap (UB_GetTexID(),13,6,0,41131) -- get id from UB_Options.ini
+			AddProfileToMap (UB_GetTexID(),13,6,0,53471) -- get id from UB_Options.ini
 		end
 		
 		
@@ -584,10 +584,10 @@ elseif ( UB_enabledJohnAndTex == true) then
 				--Randomly choose John's starting sector
 			if( math.random(1, 100 ) < 50 ) then
 				UB_JohnKulbaInitialSectorX (10)
-				AddProfileToMap (UB_GetJohnID(),10,9,0,46583) -- get id from UB_Options.ini
+				AddProfileToMap (UB_GetJohnID(),10,9,0,59603) -- get id from UB_Options.ini
 			else
 				UB_JohnKulbaInitialSectorX (11)
-				AddProfileToMap (UB_GetJohnID(),11,9,0,60954) -- get id from UB_Options.ini
+				AddProfileToMap (UB_GetJohnID(),11,9,0,75774) -- get id from UB_Options.ini
 			end
 				
 			-- added video to Betty Shop
@@ -595,17 +595,17 @@ elseif ( UB_enabledJohnAndTex == true) then
 				
 			--Tex is available
 			
-			AddProfileToMap (UB_GetTexID(),13,6,0,41131) -- get id from UB_Options.ini
+			AddProfileToMap (UB_GetTexID(),13,6,0,53471) -- get id from UB_Options.ini
 
 end
 
 -- Add UB profiles
-AddProfileToMap (UB_GetManuelID(),9,9,0,57118) -- get id from UB_Options.ini
-AddProfileToMap (UB_GetBiggensID(),13,9,0,55224) -- get id from UB_Options.ini
-AddProfileToMap (UB_GetBettyID(),13,6,0,42088) -- get id from UB_Options.ini
-AddProfileToMap (UB_GetRaulID(),11,9,0,46870) -- get id from UB_Options.ini
+AddProfileToMap (UB_GetManuelID(),9,9,0,71458) -- get id from UB_Options.ini
+AddProfileToMap (UB_GetBiggensID(),13,9,0,69324) -- get id from UB_Options.ini
+AddProfileToMap (UB_GetBettyID(),13,6,0,54548) -- get id from UB_Options.ini
+AddProfileToMap (UB_GetRaulID(),11,9,0,59930) -- get id from UB_Options.ini
 AddProfileToMap (UB_GetMorrisID(),15,12,3,14752) -- get id from UB_Options.ini
-AddProfileToMap (UB_GetRudyID(),13,10,0,62240) -- get id from UB_Options.ini
+AddProfileToMap (UB_GetRudyID(),13,10,0,77220) -- get id from UB_Options.ini
 SetFactTrue( 220 ) -- Set Manny to bartender
 SetFactTrue( 224 ) -- Set Hummer
 
@@ -867,12 +867,12 @@ if ( Test == false ) then
 	-- J12
 		if ( newDIFFICULTY_LEVEL == DIF_LEVEL_EASY ) then
 				ubNumAdmins = 0 
-				ubNumTroops = 12 + math.random( 1, 4 )
+				ubNumTroops = 0
 				ubNumElites = 0 
 		elseif ( newDIFFICULTY_LEVEL == DIF_LEVEL_MEDIUM ) then
 				ubNumAdmins = 0 
-				ubNumTroops = 10 + math.random( 1, 4 )
-				ubNumElites = 1 + math.random( 1, 2 )
+				ubNumTroops = 0
+				ubNumElites = 0
 		elseif ( newDIFFICULTY_LEVEL == DIF_LEVEL_HARD ) then	
 				ubNumAdmins = 0 
 				ubNumTroops = 11 + math.random( 1, 3 )
