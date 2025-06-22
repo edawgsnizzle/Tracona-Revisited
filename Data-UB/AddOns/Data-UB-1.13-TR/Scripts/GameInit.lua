@@ -601,7 +601,7 @@ end
 
 -- Add UB profiles
 AddProfileToMap (UB_GetManuelID(),9,9,0,71458) -- get id from UB_Options.ini
-AddProfileToMap (UB_GetBiggensID(),13,9,0,69324) -- get id from UB_Options.ini
+AddProfileToMap (UB_GetBiggensID(),13,9,0,71121) -- get id from UB_Options.ini
 AddProfileToMap (UB_GetBettyID(),13,6,0,54548) -- get id from UB_Options.ini
 AddProfileToMap (UB_GetRaulID(),11,9,0,59930) -- get id from UB_Options.ini
 AddProfileToMap (UB_GetMorrisID(),15,12,3,14752) -- get id from UB_Options.ini
