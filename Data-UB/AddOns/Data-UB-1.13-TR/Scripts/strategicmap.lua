@@ -440,6 +440,395 @@ function HandleSectorTacticalEntry( sSectorX, sSectorY, bSectorZ, fHasEverBeenPl
 	
 end
 
+-- this function is called whenever we enter a sector in tactical
+function HandleSectorTacticalEntry( sSectorX, sSectorY, bSectorZ, fHasEverBeenPlayerControlled )
+	
+	currenthour = GetWorldHour()
+	
+	if ( gubQuest( Quests.QUEST_KINGPIN_ANGEL_MARIA ) == qStatus.QUESTINPROGRESS ) then
+	
+		-- Flugente: if the bounty hunter quest is active, add bounty hunters to sectors (location determined on quest start)
+		if ( (CheckFact( Facts.FACT_BOUNTYHUNTER_KILLED_1, 0 ) == false) or (CheckFact( Facts.FACT_BOUNTYHUNTER_KILLED_2, 0 ) == false) and (bSectorZ == 0) ) then
+			
+			sector 		   = SECTOR(sSectorX, sSectorY)
+			sector_hunter1 = GetFact( Facts.FACT_BOUNTYHUNTER_SECTOR_1 )
+			sector_hunter2 = GetFact( Facts.FACT_BOUNTYHUNTER_SECTOR_2 )
+			
+			if ( (sector == sector_hunter1) and (CheckFact( Facts.FACT_BOUNTYHUNTER_KILLED_1, 0 ) == false)  ) then
+				
+				hostile = 0
+				if ( (CheckFact( Facts.FACT_BOUNTYHUNTER_KILLED_2, 0 ) == true)  ) then
+					hostile = 1
+				end
+				
+				CreateArmedCivilain(CivGroup.BOUNTYHUNTER_CIV_GROUP, SoldierClass.SOLDIER_CLASS_ADMINISTRATOR, 	13000, hostile)
+				CreateArmedCivilain(CivGroup.BOUNTYHUNTER_CIV_GROUP, SoldierClass.SOLDIER_CLASS_ARMY, 			7447,  hostile)
+				CreateArmedCivilain(CivGroup.BOUNTYHUNTER_CIV_GROUP, SoldierClass.SOLDIER_CLASS_ARMY, 			13032, hostile)
+				CreateArmedCivilain(CivGroup.BOUNTYHUNTER_CIV_GROUP, SoldierClass.SOLDIER_CLASS_ELITE, 			19291, hostile)
+				
+				-- dont spawn in deep water (B14) 
+				if (sSectorX == 14 and sSectorY == 2) then
+					CreateArmedCivilain(CivGroup.BOUNTYHUNTER_CIV_GROUP, SoldierClass.SOLDIER_CLASS_ELITE, 			16533, hostile)
+				-- dont spawn in bush (B8) 
+				elseif 	(sSectorX == 8 and sSectorY == 2) then
+				    CreateArmedCivilain(CivGroup.BOUNTYHUNTER_CIV_GROUP, SoldierClass.SOLDIER_CLASS_ELITE, 			13239, hostile)
+				-- dont spawn in cornfield (B12)
+				elseif 	(sSectorX == 12 and sSectorY == 2) then
+				    CreateArmedCivilain(CivGroup.BOUNTYHUNTER_CIV_GROUP, SoldierClass.SOLDIER_CLASS_ELITE, 			13860, hostile)
+				-- spawn at common GridNo in all other possible sectors
+				else
+					CreateArmedCivilain(CivGroup.BOUNTYHUNTER_CIV_GROUP, SoldierClass.SOLDIER_CLASS_ELITE, 			13557, hostile)
+				end
+			end
+			
+			if ( (sector == sector_hunter2) and (CheckFact( Facts.FACT_BOUNTYHUNTER_KILLED_2, 0 ) == false) ) then
+				
+				hostile = 0
+				if ( (CheckFact( Facts.FACT_BOUNTYHUNTER_KILLED_1, 0 ) == true)  ) then
+					hostile = 1
+				end
+				
+				CreateArmedCivilain(CivGroup.BOUNTYHUNTER_CIV_GROUP, SoldierClass.SOLDIER_CLASS_ADMINISTRATOR, 	13000, hostile)
+				CreateArmedCivilain(CivGroup.BOUNTYHUNTER_CIV_GROUP, SoldierClass.SOLDIER_CLASS_ARMY, 			7447,  hostile)
+				CreateArmedCivilain(CivGroup.BOUNTYHUNTER_CIV_GROUP, SoldierClass.SOLDIER_CLASS_ARMY, 			13032, hostile)
+				CreateArmedCivilain(CivGroup.BOUNTYHUNTER_CIV_GROUP, SoldierClass.SOLDIER_CLASS_ELITE, 			19291, hostile)
+				
+				-- dont spawn in deep water (B14) 
+				if (sSectorX == 14 and sSectorY == 2) then
+					CreateArmedCivilain(CivGroup.BOUNTYHUNTER_CIV_GROUP, SoldierClass.SOLDIER_CLASS_ELITE, 			16533, hostile)
+				-- dont spawn in bush (B8) 
+				elseif 	(sSectorX == 8 and sSectorY == 2) then
+				    CreateArmedCivilain(CivGroup.BOUNTYHUNTER_CIV_GROUP, SoldierClass.SOLDIER_CLASS_ELITE, 			13239, hostile)
+				-- dont spawn in cornfield (B12)
+				elseif 	(sSectorX == 12 and sSectorY == 2) then
+				    CreateArmedCivilain(CivGroup.BOUNTYHUNTER_CIV_GROUP, SoldierClass.SOLDIER_CLASS_ELITE, 			13860, hostile)
+				-- spawn at common GridNo in all other possible sectors		
+				else
+					CreateArmedCivilain(CivGroup.BOUNTYHUNTER_CIV_GROUP, SoldierClass.SOLDIER_CLASS_ELITE, 			13557, hostile)
+				end
+			end
+		end
+		
+	end
+	
+	-- Flugente: if this sector has not yet been liberated by the player, there might be some civilian enemy personnel here
+	-- the idea is that these people are government employed, and won't stay around once you take the sector
+	-- parameters of CreateCivilian:
+	-- - tile where person should be created on the map
+	-- - civilian group they should belong to (see also CivGRoupNames.xml)
+	-- - number of the merchant the civilian should be (-1 for no merchant)
+	-- - bodytype
+	-- - vest colour (-1 for random)
+	-- - pants colour (-1 for random)
+	-- - hair colour (-1 for random)
+	-- - skin colour (-1 for random)
+	-- - optional item 1 (-1 for nothing)
+	-- - optional item 2 (-1 for nothing)
+	-- - optional item 3 (-1 for nothing)
+	-- - optional item 4 (-1 for nothing
+	
+	if ( fHasEverBeenPlayerControlled == false ) then
+		-- surface sectors
+		if ( bSectorZ == 0 ) then
+			-- F10 Central SAM
+			if ( sSectorX == 10 and sSectorY == SectorY.MAP_ROW_F ) then
+				CreateCivilian(80103, CivGroup.RADAR_TECHNICIAN_GROUP, -1, Bodytype.MANCIV, Vest.GREYVEST, Pants.GREENPANTS, -1, -1, 210, 635, -1, -1)
+				CreateCivilian(74020, CivGroup.RADAR_TECHNICIAN_GROUP, -1, Bodytype.MANCIV, Vest.GREYVEST, Pants.GREENPANTS, -1, -1, 210, 635, -1, -1)
+				CreateCivilian(79045, CivGroup.RADAR_TECHNICIAN_GROUP, -1, Bodytype.REGMALE, Vest.GREYVEST, Pants.GREENPANTS, -1, -1, 210, 8, -1, -1)
+			-- K14 Rocket Facility SAM
+			elseif ( sSectorX == 14 and sSectorY == SectorY.MAP_ROW_K ) then
+				CreateCivilian(74658, CivGroup.RADAR_TECHNICIAN_GROUP, -1, Bodytype.MANCIV, Vest.GREYVEST, Pants.GREENPANTS, -1, -1, 210, 8, -1, -1)
+				CreateCivilian(65331, CivGroup.RADAR_TECHNICIAN_GROUP, -1, Bodytype.REGFEMALE, Vest.GREYVEST, Pants.GREENPANTS, -1, -1, 210, 635, -1, -1)
+				CreateCivilian(64594, CivGroup.RADAR_TECHNICIAN_GROUP, -1, Bodytype.REGMALE, Vest.GREYVEST, Pants.GREENPANTS, -1, -1, 210, 8, -1, -1)
+			-- J13 Power Station
+			elseif ( sSectorX == 13 and sSectorY == SectorY.MAP_ROW_J ) then
+				CreateCivilian(64984, CivGroup.RADAR_TECHNICIAN_GROUP, -1, Bodytype.REGFEMALE, Vest.GREYVEST, Pants.GREENPANTS, -1, -1, 210, 635, -1, -1)
+				CreateCivilian(74699, CivGroup.RADAR_TECHNICIAN_GROUP, -1, Bodytype.MANCIV, Vest.GREYVEST, Pants.GREENPANTS, -1, -1, 210, 8, -1, -1)
+				CreateCivilian(66771, CivGroup.RADAR_TECHNICIAN_GROUP, -1, Bodytype.MANCIV, Vest.GREYVEST, Pants.GREENPANTS, -1, -1, 210, 8, -1, -1)
+				CreateCivilian(65726, CivGroup.FACTORY_GROUP, -1, Bodytype.REGMALE, Vest.YELLOWVEST, Pants.TANPANTS, -1, -1, -1, -1, -1, -1)
+			-- K15 Complex Surface
+			elseif ( sSectorX == 15 and sSectorY == SectorY.MAP_ROW_K ) then
+				CreateCivilian(56327, CivGroup.RADAR_TECHNICIAN_GROUP, -1, Bodytype.MANCIV, Vest.GREYVEST, Pants.GREENPANTS, -1, -1, 210, 635, -1, -1)
+				CreateCivilian(67491, CivGroup.RADAR_TECHNICIAN_GROUP, -1, Bodytype.REGMALE, Vest.GREYVEST, Pants.GREENPANTS, -1, -1, 210, 635, -1, -1)
+				CreateCivilian(68256, CivGroup.RADAR_TECHNICIAN_GROUP, -1, Bodytype.MANCIV, Vest.GREYVEST, Pants.GREENPANTS, -1, -1, 210, 8, -1, -1)
+				CreateCivilian(61782, CivGroup.SCIENTIST_GROUP, -1, Bodytype.MANCIV, Vest.WHITEVEST, Pants.BEIGEPANTS, -1, -1, -1, -1, -1, -1)
+				CreateCivilian(65714, CivGroup.ADMINISTRATIVE_STAFF_GROUP, -1, Bodytype.DRESSCIV, Vest.PURPLESHIRT, Pants.BLUEPANTS, Hair.WHITEHEAD, -1, -1, -1, -1, -1)
+			-- E13 Sardena Barracks
+			elseif ( sSectorX == 13 and sSectorY == SectorY.MAP_ROW_E ) then
+				CreateCivilian(54508, CivGroup.ADMINISTRATIVE_STAFF_GROUP, -1, Bodytype.MINICIV, Vest.GREENVEST, Pants.GREENPANTS, -1, -1, -1, -1, -1, -1)
+				CreateCivilian(73977, CivGroup.ADMINISTRATIVE_STAFF_GROUP, -1, Bodytype.DRESSCIV, Vest.GREENVEST, Pants.GREENPANTS, Hair.WHITEHEAD, -1, -1, -1, -1, -1)
+				CreateCivilian(53108, CivGroup.BARRACK_STAFF_GROUP, -1, Bodytype.REGMALE, Vest.GREENVEST, Pants.GREENPANTS, -1, -1, -1, -1, -1, -1)
+				CreateCivilian(56645, CivGroup.BARRACK_STAFF_GROUP, -1, Bodytype.REGFEMALE, Vest.GREENVEST, Pants.GREENPANTS, -1, -1, -1, -1, -1, -1)
+				CreateCivilian(62434, CivGroup.BARRACK_STAFF_GROUP, -1, Bodytype.BIGMALE, Vest.GREENVEST, Pants.GREENPANTS, -1, -1, -1, -1, -1, -1)
+				CreateCivilian(51632, CivGroup.BARRACK_STAFF_GROUP, -1, Bodytype.REGMALE, Vest.GREENVEST, Pants.GREENPANTS, -1, -1, -1, -1, -1, -1)
+				CreateCivilian(72900, CivGroup.BARRACK_STAFF_GROUP, -1, Bodytype.MANCIV, Vest.GREENVEST, Pants.GREENPANTS, -1, -1, -1, -1, -1, -1)
+				CreateCivilian(47677, CivGroup.BARRACK_STAFF_GROUP, -1, Bodytype.REGMALE, Vest.GREENVEST, Pants.GREENPANTS, -1, -1, -1, -1, -1, -1)
+				CreateCivilian(44456, CivGroup.RADAR_TECHNICIAN_GROUP, -1, Bodytype.MANCIV, Vest.GREYVEST, Pants.GREENPANTS, -1, -1, 210, 635, -1, -1)
+				CreateCivilian(45551, CivGroup.RADAR_TECHNICIAN_GROUP, -1, Bodytype.MANCIV, Vest.GREYVEST, Pants.GREENPANTS, -1, -1, 210, 635, -1, -1)
+				CreateCivilian(60238, CivGroup.RADAR_TECHNICIAN_GROUP, -1, Bodytype.MANCIV, Vest.GREYVEST, Pants.GREENPANTS, -1, -1, 210, 635, -1, -1)
+			-- E14 Sardena Airport
+			elseif ( sSectorX == 14 and sSectorY == SectorY.MAP_ROW_E ) then
+				--CreateCivilian(71753, CivGroup.AIRPORT_STAFF_GROUP, -1, Bodytype.BIGMALE, Vest.BROWNVEST, Pants.JEANPANTS, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(36145, CivGroup.RADAR_TECHNICIAN_GROUP, -1, Bodytype.MANCIV, Vest.GREYVEST, Pants.GREENPANTS, -1, -1, 210, 8, -1, -1)
+				--CreateCivilian(87243, CivGroup.AIRPORT_STAFF_GROUP, -1, Bodytype.REGFEMALE, Vest.BROWNVEST, Pants.JEANPANTS, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(88349, CivGroup.AIRPORT_STAFF_GROUP, -1, Bodytype.REGMALE, Vest.BROWNVEST, Pants.JEANPANTS, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(45197, CivGroup.AIRPORT_STAFF_GROUP, -1, Bodytype.REGFEMALE, Vest.BROWNVEST, Pants.JEANPANTS, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(53766, CivGroup.AIRPORT_STAFF_GROUP, -1, Bodytype.REGMALE, Vest.BROWNVEST, Pants.JEANPANTS, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(49512, CivGroup.AIRPORT_STAFF_GROUP, -1, Bodytype.FATCIV, Vest.BROWNVEST, Pants.JEANPANTS, Hair.WHITEHEAD, -1, -1, -1, -1, -1)
+				--CreateCivilian(56717, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(56722, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(71877, CivGroup.LOYAL_CIV_GROUP, -1, Bodytype.BIGMALE, Vest.BROWNVEST, Pants.BLACKPANTS, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(62154, CivGroup.LOYAL_CIV_GROUP, -1, Bodytype.REGMALE, -1, -1, -1, -1, 195, -1, -1, -1)
+				--CreateCivilian(65399, CivGroup.LOYAL_CIV_GROUP, -1, Bodytype.REGMALE, -1, -1, -1, -1, 195, -1, -1, -1)
+			-- F13 Sardena Residential
+			elseif ( sSectorX == 13 and sSectorY == SectorY.MAP_ROW_F ) then
+				--CreateCivilian(49820, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(49453, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, 195, -1, -1, -1)
+				--CreateCivilian(53054, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(52334, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(26828, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, 195, -1, -1, -1)
+				--CreateCivilian(17109, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(13511, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(31565, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, 195, -1, -1, -1)
+			-- F14 Sardena Industrial
+			elseif ( sSectorX == 14 and sSectorY == SectorY.MAP_ROW_F ) then
+				--CreateCivilian(72512, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(63950, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, 195, -1, -1, -1)
+				--CreateCivilian(59284, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(50269, CivGroup.FACTORY_GROUP, -1, Bodytype.REGMALE, Vest.YELLOWVEST, Pants.TANPANTS, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(40436, CivGroup.FACTORY_GROUP, -1, Bodytype.REGFEMALE, Vest.YELLOWVEST, Pants.TANPANTS, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(40083, CivGroup.FACTORY_GROUP, -1, Bodytype.REGMALE, Vest.YELLOWVEST, Pants.TANPANTS, -1, -1, -1, -1, -1, -1)
+			-- G14 Sardena Hospital
+			elseif ( sSectorX == 14 and sSectorY == SectorY.MAP_ROW_G ) then
+				--CreateCivilian(84076, CivGroup.ADMINISTRATIVE_STAFF_GROUP, -1, Bodytype.MINICIV, Vest.PURPLESHIRT, Pants.BLUEPANTS, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(85501, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(92702, CivGroup.LOYAL_CIV_GROUP, -1, Bodytype.FATCIV, -1, -1, -1, -1, 195, -1, -1, -1)
+				--CreateCivilian(86235, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(75426, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(23230, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, 195, -1, -1, -1)
+				--CreateCivilian(27540, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(37977, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(42297, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, 195, -1, -1, -1)
+			-- I10 Varrez
+			elseif ( sSectorX == 10 and sSectorY == SectorY.MAP_ROW_I ) then
+				--CreateCivilian(49519, CivGroup.ADMINISTRATIVE_STAFF_GROUP, -1, Bodytype.MINICIV, Vest.PURPLESHIRT, Pants.BLUEPANTS, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(85438, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(66074, CivGroup.LOYAL_CIV_GROUP, -1, Bodytype.FATCIV, -1, -1, -1, -1, 195, -1, -1, -1)
+				--CreateCivilian(70395, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(83374, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(63892, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, 195, -1, -1, -1)
+				--CreateCivilian(69678, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(75056, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(32286, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, 195, -1, -1, -1)
+			-- I11 Varrez
+			elseif ( sSectorX == 11 and sSectorY == SectorY.MAP_ROW_I ) then
+				--CreateCivilian(93720, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(86172, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(85823, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(76496, CivGroup.LOYAL_CIV_GROUP, -1, Bodytype.REGMALE, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(67512, CivGroup.LOYAL_CIV_GROUP, -1, Bodytype.BIGMALE, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(62464, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(34793, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, 195, -1, -1, -1)
+			-- H11 Varrez
+			elseif ( sSectorX == 11 and sSectorY == SectorY.MAP_ROW_H ) then
+				--CreateCivilian(49142, CivGroup.BARRACK_STAFF_GROUP, -1, Bodytype.REGMALE, Vest.GREENVEST, Pants.GREENPANTS, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(75485, CivGroup.LOYAL_CIV_GROUP, -1, Bodytype.BIGMALE, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(71471, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(90596, CivGroup.LOYAL_CIV_GROUP, -1, -1, -1, -1, -1, -1, 195, -1, -1, -1)
+			end
+		-- sublevel 1
+		elseif ( bSectorZ == 1 ) then
+			-- Orta
+			if ( sSectorX == 4 and sSectorY == SectorY.MAP_ROW_K ) then
+				CreateCivilian(14494, CivGroup.ADMINISTRATIVE_STAFF_GROUP, -1, Bodytype.MINICIV, Vest.PURPLESHIRT, Pants.BLUEPANTS, -1, -1, -1, -1, -1, -1)
+				CreateCivilian(13062, CivGroup.SCIENTIST_GROUP, -1, Bodytype.MANCIV, Vest.WHITEVEST, Pants.BEIGEPANTS, -1, -1, -1, -1, -1, -1)
+				CreateCivilian(13167, CivGroup.SCIENTIST_GROUP, -1, Bodytype.FATCIV, Vest.WHITEVEST, Pants.BEIGEPANTS, Hair.WHITEHEAD, -1, -1, -1, -1, -1)
+				CreateCivilian(12048, CivGroup.SCIENTIST_GROUP, -1, Bodytype.REGMALE, Vest.WHITEVEST, Pants.BEIGEPANTS, -1, -1, -1, -1, -1, -1)
+				CreateCivilian(9827, CivGroup.FACTORY_GROUP, -1, Bodytype.BIGMALE, Vest.YELLOWVEST, Pants.TANPANTS, -1, -1, -1, -1, -1, -1)
+				CreateCivilian(10007, CivGroup.FACTORY_GROUP, -1, Bodytype.REGMALE, Vest.YELLOWVEST, Pants.TANPANTS, -1, -1, -1, -1, -1, -1)
+				CreateCivilian(17211, CivGroup.FACTORY_GROUP, -1, Bodytype.BIGMALE, Vest.YELLOWVEST, Pants.TANPANTS, -1, -1, -1, -1, -1, -1)
+			-- Tixa
+			elseif ( sSectorX == 9 and sSectorY == SectorY.MAP_ROW_J ) then
+				CreateCivilian(12875, CivGroup.WARDEN_CIV_GROUP, -1, Bodytype.REGFEMALE, Vest.BROWNVEST, Pants.BLACKPANTS, -1, -1, 213, 298, 1625, -1)
+				CreateCivilian(12096, CivGroup.WARDEN_CIV_GROUP, -1, Bodytype.BIGMALE, Vest.BROWNVEST, Pants.BLACKPANTS, -1, -1, 213, 298, 1625, -1)
+				CreateCivilian(7287, CivGroup.WARDEN_CIV_GROUP, -1, Bodytype.REGMALE, Vest.BROWNVEST, Pants.BLACKPANTS, -1, -1, 213, 298, 1625, -1)
+				CreateCivilian(5843, CivGroup.WARDEN_CIV_GROUP, -1, Bodytype.BIGMALE, Vest.BROWNVEST, Pants.BLACKPANTS, -1, -1, 213, 298, 1625, -1)
+				CreateCivilian(5378, CivGroup.WARDEN_CIV_GROUP, -1, Bodytype.MANCIV, Vest.BROWNVEST, Pants.BLACKPANTS, -1, -1, 213, 298, 1625, -1)
+			end
+		end
+	end
+	
+	-- add merchants
+	if ( bSectorZ == 0 ) then
+		-- I10 Varrez
+		if ( sSectorX == 10 and sSectorY == SectorY.MAP_ROW_I) then
+		
+			if ( currenthour > 7 and currenthour < 20 ) then
+			
+				if ( GetTownLoyaltyRating(2) > 0 ) then
+					-- wine store
+				--CreateCivilian(85537, 0, 55, Bodytype.REGFEMALE, -1, -1, -1, -1, -1, -1, -1, -1)
+				end
+				
+				-- general store
+				--CreateCivilian(84820, 0, 55, Bodytype.MANCIV, -1, -1, -1, -1, -1, -1, -1, -1)
+					
+			end
+			
+		-- Alma
+		elseif ( sSectorX == 14 and sSectorY == SectorY.MAP_ROW_I) then
+		
+			if ( currenthour > 7 and currenthour < 19 ) then
+			
+				-- wine store
+				--CreateCivilian(8530, 0, 56, Bodytype.MANCIV, Vest.GREYVEST, -1, -1, -1, -1, -1, -1, -1)
+				-- general store - both traders use the same inventory
+				--CreateCivilian(13839, 0, 42, Bodytype.FATCIV, Vest.YELLOWVEST, Pants.BLUEPANTS, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(12878, 0, 42, Bodytype.DRESSCIV, Vest.YELLOWVEST, Pants.BLUEPANTS, -1, -1, -1, -1, -1, -1)
+			
+			end
+			
+		-- Cambria
+		elseif ( sSectorX == 9 and sSectorY == SectorY.MAP_ROW_F) then
+			-- drug dealer (university ruins)
+				--CreateCivilian(10032, 0, 60, Bodytype.HATKIDCIV, -1, -1, -1, -1, -1, -1, -1, -1)
+		elseif ( sSectorX == 9 and sSectorY == SectorY.MAP_ROW_G) then
+		
+			if ( currenthour > 7 and currenthour < 19 ) then
+			
+				-- wine store
+				--CreateCivilian(17657, 0, 57, Bodytype.MANCIV, Vest.JEANVEST, Pants.GREENPANTS, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(16055, 0, 57, Bodytype.REGFEMALE, Vest.JEANVEST, Pants.GREENPANTS, -1, -1, -1, -1, -1, -1)
+				-- pharmacy
+				--CreateCivilian(11627, 0, 47, Bodytype.FATCIV, Vest.WHITEVEST, -1, Hair.WHITEHEAD, -1, -1, -1, -1, -1)
+				-- restaurant
+				--CreateCivilian(15630, 0, 49, Bodytype.MANCIV, Vest.GYELLOWSHIRT, Pants.BEIGEPANTS, -1, -1, -1, -1, -1, -1)
+				--CreateCivilian(15321, 0, 49, Bodytype.MINICIV, Vest.GYELLOWSHIRT, Pants.BEIGEPANTS, -1, -1, -1, -1, -1, -1)
+				-- general store
+				--CreateCivilian(15117, 0, 43, Bodytype.MANCIV, -1, -1, -1, -1, -1, -1, -1, -1)
+			
+			end
+			
+		-- Grumm
+		elseif ( sSectorX == 1 and sSectorY == SectorY.MAP_ROW_H) then
+		
+			if ( currenthour > 7 and currenthour < 19 ) then
+			
+				-- general store
+				--CreateCivilian(12430, 0, 44, Bodytype.BIGMALE, -1, -1, -1, -1, -1, -1, -1, -1)
+				-- wine store
+				--CreateCivilian(13533, 0, 58, Bodytype.MANCIV, -1, -1, -1, -1, -1, -1, -1, -1)
+				-- restaurant
+				--CreateCivilian(12722, 0, 50, Bodytype.MINICIV, -1, -1, -1, -1, -1, -1, -1, -1)
+				-- tool shop
+				--CreateCivilian(8362, 0, 61, Bodytype.REGFEMALE, -1, -1, -1, -1, -1, -1, -1, -1)
+			
+			end
+			
+		-- Balime
+		elseif ( sSectorX == 12 and sSectorY == SectorY.MAP_ROW_L) then
+		
+			if ( currenthour > 7 and currenthour < 19 ) then
+			
+				-- luxury store
+				--CreateCivilian(9653, CivGroup.LOYAL_CIV_GROUP, 64, Bodytype.MANCIV, -1, -1, -1, -1, 212, 264, -1, -1)
+				
+			end
+			
+		-- gas station near Balime	
+		elseif ( sSectorX == 10 and sSectorY == SectorY.MAP_ROW_L) then
+		
+			if ( currenthour > 7 and currenthour < 19 ) then
+			
+				-- restaurant
+				--CreateCivilian(11932, 0, 51, Bodytype.MINICIV, -1, -1, -1, -1, -1, -1, -1, -1)
+				
+			end
+			
+		-- San Mona
+		elseif ( sSectorX == 6 and sSectorY == SectorY.MAP_ROW_C) then
+			-- only add merchants if Kingpin is alive and not hostile towards us
+			if ( (CheckFact( Facts.FACT_KINGPIN_DEAD, 0 ) == false) and
+			(CheckFact( Facts.FACT_KINGPIN_IS_ENEMY, 0 ) == false) and 
+			(CheckMercIsDead ( Profil.KINGPIN ) == false) ) then
+			
+				if ( currenthour > 7 and currenthour < 19 ) then
+				
+					-- restaurant
+					--CreateCivilian(16351, CivGroup.KINGPIN_CIV_GROUP, 66, Bodytype.DRESSCIV, -1, -1, -1, -1, -1, -1, -1, -1)
+					-- armour store (Skin Tight Fashions)
+					--CreateCivilian(13010, CivGroup.KINGPIN_CIV_GROUP, 67, Bodytype.MINICIV, -1, -1, -1, -1, -1, -1, -1, -1)
+					-- hunting store
+					--CreateCivilian(11098, CivGroup.KINGPIN_CIV_GROUP, 62, Bodytype.REGMALE, Vest.BROWNVEST, Pants.GREENPANTS, -1, -1, 763, 135, 288, 284)
+				
+				end
+				
+			end
+			
+			-- if we haven't pissed of the black market, spawn dealer
+			if ( CheckCivGroupHostile(CivGroup.BLACKMARKET_GROUP) == false ) then
+				
+				-- unlock the door so we can enter
+				ACTION_ITEM_UNLOCK_DOOR(12834)
+				
+				-- black market dealer and bodyguards
+				CreateCivilian(12992, CivGroup.BLACKMARKET_GROUP, 68, Bodytype.MANCIV, Vest.GREYVEST, Pants.JEANPANTS, Hair.WHITEHEAD, Skin.BLACKSKIN, 337, 264, -1, -1)
+				CreateArmedCivilain(CivGroup.BLACKMARKET_GROUP, SoldierClass.SOLDIER_CLASS_ELITE, 12672, 0)
+				CreateArmedCivilain(CivGroup.BLACKMARKET_GROUP, SoldierClass.SOLDIER_CLASS_ELITE, 13312, 0)
+				CreateArmedCivilain(CivGroup.BLACKMARKET_GROUP, SoldierClass.SOLDIER_CLASS_ELITE, 12995, 0)
+			end
+			
+		elseif ( sSectorX == 5 and sSectorY == SectorY.MAP_ROW_C) then
+			-- only add merchants if Kingpin is alive and not hostile towards us
+			if ( (CheckFact( Facts.FACT_KINGPIN_DEAD, 0 ) == false) and
+			(CheckFact( Facts.FACT_KINGPIN_IS_ENEMY, 0 ) == false) and 
+			(CheckMercIsDead ( Profil.KINGPIN ) == false) ) then
+			
+				if ( currenthour > 7 and currenthour < 19 ) then
+				
+					-- general store
+					--CreateCivilian(6641, CivGroup.KINGPIN_CIV_GROUP, 45, Bodytype.REGMALE, -1, -1, -1, -1, 694, 107, 37, -1)
+					-- construction materials store
+					--CreateCivilian(20549, CivGroup.KINGPIN_CIV_GROUP, 63, Bodytype.STOCKYMALE, -1, -1, -1, -1, 13, 161, 302, 135)
+					-- restaurant
+					--CreateCivilian(16755, CivGroup.KINGPIN_CIV_GROUP, 52, Bodytype.MANCIV, -1, -1, -1, -1, 759, -1, -1, -1)
+					-- wine store
+					--CreateCivilian(10804, CivGroup.KINGPIN_CIV_GROUP, 59, Bodytype.REGFEMALE, -1, -1, -1, -1, 340, 107, 302, 284)
+				
+				end
+				
+			end
+			
+		-- Chitzena
+		-- Meduna
+		elseif ( sSectorX == 4 and sSectorY == SectorY.MAP_ROW_O) then
+		
+			if ( currenthour > 7 and currenthour < 19 ) then
+			
+				-- posh general store
+				--CreateCivilian(10503, CivGroup.LOYAL_CIV_GROUP, 46, Bodytype.MINICIV, -1, -1, -1, -1, 212, -1, -1, -1)
+				-- restaurant
+				--CreateCivilian(18465, CivGroup.LOYAL_CIV_GROUP, 53, Bodytype.MANCIV, -1, -1, -1, -1, -1, -1, -1, -1)
+				-- restaurant
+				--CreateCivilian(9840, CivGroup.LOYAL_CIV_GROUP, 54, Bodytype.REGFEMALE, -1, -1, -1, -1, -1, -1, -1, -1)
+				-- luxury store
+				--CreateCivilian(10916, CivGroup.LOYAL_CIV_GROUP, 65, Bodytype.MANCIV, -1, -1, -1, -1, 264, -1, -1, -1)
+				-- pharmacy
+				--CreateCivilian(11579, CivGroup.LOYAL_CIV_GROUP, 48, Bodytype.FATCIV, -1, -1, -1, -1, -1, -1, -1, -1)
+			
+			end
+			
+		end
+	elseif ( bSectorZ == 1 ) then
+		-- We spawn a rebel 'quartermaster' in the rebel basement. He doesn't have much to offer, and it isn't exactly quality ware, but better than nothing
+		if ( sSectorX == 10 and sSectorY == SectorY.MAP_ROW_A) then
+			--CreateCivilian(11433, CivGroup.REBEL_CIV_GROUP, 40, Bodytype.CRIPPLECIV, Vest.BROWNVEST, Pants.GREENPANTS, Hair.WHITEHEAD, -1, 711, 545, 545, -1)
+		end
+	end
+	
+	
+end
+
 -- these colours can be used in the map
 -- if you want to know how they look, test them on the map
 -- if you want more colours, check whether you feel lucky and ask a coder

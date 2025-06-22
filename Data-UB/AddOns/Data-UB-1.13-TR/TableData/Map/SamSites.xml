@@ -71,8 +71,8 @@ Others not.
 		<SAM>
 			<samIndex>3</samIndex>
 			<samSector>
-				<x>8</x>
-				<y>9</y>
+				<x>14</x>
+				<y>11</y>
 			</samSector>
 			<samHidden>1</samHidden>
 			<samOrientation>3</samOrientation>
@@ -82,8 +82,8 @@ Others not.
 		<SAM>
 			<samIndex>4</samIndex>
 			<samSector>
-				<x>4</x>
-				<y>14</y>
+				<x>10</x>
+				<y>6</y>
 			</samSector>
 			<samHidden>1</samHidden>
 			<samOrientation>3</samOrientation>
