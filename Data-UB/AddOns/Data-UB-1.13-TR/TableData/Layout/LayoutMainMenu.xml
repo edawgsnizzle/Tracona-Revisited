@@ -42,8 +42,8 @@ ImagePositionRelative	if 0 the image is displayed on the same place on any resol
 		<FitToScreen>0</FitToScreen>
 		<StretchImage>0</StretchImage>
 		<CenterImage>1</CenterImage>
-		<ImagePositionRelative>0</ImagePositionRelative>
-		<ImagePositionX>188</ImagePositionX>
-		<ImagePositionY>10</ImagePositionY>
+		<ImagePositionRelative>1</ImagePositionRelative>
+		<ImagePositionX>78</ImagePositionX>
+		<ImagePositionY>-20</ImagePositionY>
 	</IMAGE>
 </MAINMENU>
